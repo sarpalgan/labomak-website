@@ -1,0 +1,650 @@
+[
+  {
+    "id": 1372,
+    "name_tr": "yorulma",
+    "slug": "yorulma",
+    "parent_id": 7,
+    "source_url": "https://labomak.com.tr/index.php/category/imalatlarimiz/yorulma/",
+    "published_post_count": 0,
+    "description_html": ""
+  },
+  {
+    "id": 1238,
+    "name_tr": "Geçirgenlik",
+    "slug": "gecirgenlik",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/gecirgenlik/",
+    "published_post_count": 4,
+    "description_html": ""
+  },
+  {
+    "id": 1184,
+    "name_tr": "Yardımcı Ürünler",
+    "slug": "yardimci-urunler",
+    "parent_id": 7,
+    "source_url": "https://labomak.com.tr/index.php/category/imalatlarimiz/yardimci-urunler/",
+    "published_post_count": 0,
+    "description_html": ""
+  },
+  {
+    "id": 926,
+    "name_tr": "Kompozit",
+    "slug": "kompozit",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/kompozit/",
+    "published_post_count": 6,
+    "description_html": ""
+  },
+  {
+    "id": 5,
+    "name_tr": "İletişim Ulaşım",
+    "slug": "iletisim",
+    "parent_id": 1,
+    "source_url": "https://labomak.com.tr/index.php/category/hakkimizda/iletisim/",
+    "published_post_count": 1,
+    "description_html": "Bize Ulaşın"
+  },
+  {
+    "id": 818,
+    "name_tr": "Özel Üretimler",
+    "slug": "ozel-uretimler",
+    "parent_id": 7,
+    "source_url": "https://labomak.com.tr/index.php/category/imalatlarimiz/ozel-uretimler/",
+    "published_post_count": 32,
+    "description_html": ""
+  },
+  {
+    "id": 643,
+    "name_tr": "Çekme Kopma",
+    "slug": "cekme-kopma",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/cekme-kopma/",
+    "published_post_count": 11,
+    "description_html": ""
+  },
+  {
+    "id": 318,
+    "name_tr": "Tıbbi tekstil ve ipler",
+    "slug": "tibbi-tekstil-ve-ipler",
+    "parent_id": 315,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/medikal/tibbi-tekstil-ve-ipler/",
+    "published_post_count": 7,
+    "description_html": ""
+  },
+  {
+    "id": 304,
+    "name_tr": "Kauçuk ve Plastik",
+    "slug": "kaucuk-plastik",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/kaucuk-plastik/",
+    "published_post_count": 19,
+    "description_html": ""
+  },
+  {
+    "id": 221,
+    "name_tr": "Numune Tutucu Fikstürler ve Çeneler",
+    "slug": "cekme-ceneleri-ve-fiksturler",
+    "parent_id": 214,
+    "source_url": "https://labomak.com.tr/index.php/category/mukavemet-test-cihazlari/cekme-ceneleri-ve-fiksturler/",
+    "published_post_count": 8,
+    "description_html": "[caption id=\"attachment_4038\" align=\"aligncenter\" width=\"300\"]<a href=\"https://labomak.com.tr/wp-content/uploads/Cenele-kategori-grup.jpg\"></a> Numune tutma aparatları çeneler ve fikstürler[/caption]"
+  },
+  {
+    "id": 7,
+    "name_tr": "TEST CİHAZLARI",
+    "slug": "imalatlarimiz",
+    "parent_id": 0,
+    "source_url": "https://labomak.com.tr/index.php/category/imalatlarimiz/",
+    "published_post_count": 60,
+    "description_html": ""
+  },
+  {
+    "id": 227,
+    "name_tr": "Dokunmatik Bilgisayarlar",
+    "slug": "dokunmatik-bilgisayarlar",
+    "parent_id": 226,
+    "source_url": "https://labomak.com.tr/index.php/category/yardimci-donanimlar/dokunmatik-bilgisayarlar/",
+    "published_post_count": 1,
+    "description_html": "[caption id=\"attachment_1728\" align=\"alignnone\" width=\"150\"]<img class=\"size-thumbnail wp-image-1728\" src=\"https://labomak.com.tr/wp-content/uploads/kompetan-tek-kolon-cift-kolon-grup-2-150x150.png\" alt=\"\" width=\"150\" height=\"150\" /> Dokunmatik kombine bilgisayar üniteli kompetan serileri[/caption]"
+  },
+  {
+    "id": 280,
+    "name_tr": "Kırılma - Kopma",
+    "slug": "kirilma-kopma",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/kirilma-kopma/",
+    "published_post_count": 9,
+    "description_html": ""
+  },
+  {
+    "id": 312,
+    "name_tr": "Kağıt, Karton, Mukavva",
+    "slug": "kagit-karton-mukavva",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/kagit-karton-mukavva/",
+    "published_post_count": 17,
+    "description_html": ""
+  },
+  {
+    "id": 319,
+    "name_tr": "Şırınga ve iğne testleri",
+    "slug": "siringa-ve-igne-testleri",
+    "parent_id": 315,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/medikal/siringa-ve-igne-testleri/",
+    "published_post_count": 7,
+    "description_html": ""
+  },
+  {
+    "id": 213,
+    "name_tr": "Farkımız",
+    "slug": "neden-labomak-ayricalikli",
+    "parent_id": 1,
+    "source_url": "https://labomak.com.tr/index.php/category/hakkimizda/neden-labomak-ayricalikli/",
+    "published_post_count": 0,
+    "description_html": "[caption id=\"attachment_2399\" align=\"alignnone\" width=\"288\"] Bu petek de yıllardır şeklini koruyor[/caption]\r\n\r\n&nbsp;"
+  },
+  {
+    "id": 228,
+    "name_tr": "İlave dokunmatik ekranlar",
+    "slug": "ilave-dokunmatik-ekranlar",
+    "parent_id": 226,
+    "source_url": "https://labomak.com.tr/index.php/category/yardimci-donanimlar/ilave-dokunmatik-ekranlar/",
+    "published_post_count": 1,
+    "description_html": "[caption id=\"attachment_1362\" align=\"alignnone\" width=\"150\"]<img class=\"size-thumbnail wp-image-1362\" src=\"https://labomak.com.tr/wp-content/uploads/charpy-300j-ekran-150x150.jpg\" alt=\"\" width=\"150\" height=\"150\" /> 10 teste kadar datalogger[/caption]"
+  },
+  {
+    "id": 214,
+    "name_tr": "Çekme Kopma basma dayanımı",
+    "slug": "mukavemet-test-cihazlari",
+    "parent_id": 0,
+    "source_url": "https://labomak.com.tr/index.php/category/mukavemet-test-cihazlari/",
+    "published_post_count": 15,
+    "description_html": "<img class=\"alignnone size-thumbnail wp-image-2280\" src=\"https://labomak.com.tr/wp-content/uploads/kompetan-grup-150x150.png\" alt=\"\" width=\"150\" height=\"150\" />"
+  },
+  {
+    "id": 220,
+    "name_tr": "Mukavemet Cihazı Aksesuarları",
+    "slug": "mukavemet-cihazi-aksesuarlari",
+    "parent_id": 214,
+    "source_url": "https://labomak.com.tr/index.php/category/mukavemet-test-cihazlari/mukavemet-cihazi-aksesuarlari/",
+    "published_post_count": 1,
+    "description_html": "<img class=\"size-thumbnail wp-image-1446\" src=\"https://labomak.com.tr/wp-content/uploads/kompetan-tek-kolon-cift-kolon-grup-1-150x150.png\" alt=\"Dokunmatik kombine bilgisayar üniteli kompetan serileri\" width=\"50\" height=\"050\" />\r\n\r\nDokunmatik kombine bilgisayar üniteli kompetan serileri"
+  },
+  {
+    "id": 223,
+    "name_tr": "Delme çeneleri ve fikstürleri",
+    "slug": "delme-ceneleri-ve-fiksturleri",
+    "parent_id": 214,
+    "source_url": "https://labomak.com.tr/index.php/category/mukavemet-test-cihazlari/delme-ceneleri-ve-fiksturleri/",
+    "published_post_count": 3,
+    "description_html": "[caption id=\"attachment_2440\" align=\"alignnone\" width=\"150\"]<img class=\"size-thumbnail wp-image-2440\" src=\"https://labomak.com.tr/wp-content/uploads/penetrasyon-delme-batma-problari-150x150.jpg\" alt=\"Penertasyon, telme, batma, patlatme gibi test için delme aparatlerı ve tutucu kasnaklar\" width=\"150\" height=\"150\" /> Penertasyon, telme, batma, patlatme gibi test için delme aparatlerı ve tutucu kasnaklar[/caption]"
+  },
+  {
+    "id": 309,
+    "name_tr": "Tıbbi ambalaj",
+    "slug": "ambalaj-tibbi-ambalaj",
+    "parent_id": 315,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/medikal/ambalaj-tibbi-ambalaj/",
+    "published_post_count": 14,
+    "description_html": ""
+  },
+  {
+    "id": 218,
+    "name_tr": "UYGULAMALAR",
+    "slug": "uygulamalara-gore-test-cihazlari",
+    "parent_id": 0,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/",
+    "published_post_count": 4,
+    "description_html": ""
+  },
+  {
+    "id": 284,
+    "name_tr": "Soyulma",
+    "slug": "soyulma",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/soyulma/",
+    "published_post_count": 8,
+    "description_html": ""
+  },
+  {
+    "id": 867,
+    "name_tr": "Metal",
+    "slug": "metal",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/metal/",
+    "published_post_count": 13,
+    "description_html": ""
+  },
+  {
+    "id": 229,
+    "name_tr": "Ekstansometre",
+    "slug": "ekstansometre",
+    "parent_id": 226,
+    "source_url": "https://labomak.com.tr/index.php/category/yardimci-donanimlar/ekstansometre/",
+    "published_post_count": 1,
+    "description_html": "<img class=\"alignnone wp-image-5399\" src=\"https://labomak.com.tr/wp-content/uploads/ekstansometre-273x300.png\" alt=\"\" width=\"138\" height=\"151\" />  <img class=\"alignnone wp-image-5400\" src=\"https://labomak.com.tr/wp-content/uploads/image00023-169x300.jpeg\" alt=\"\" width=\"85\" height=\"151\" />"
+  },
+  {
+    "id": 6,
+    "name_tr": "İş Ortaklarımız",
+    "slug": "is-ortaklarimiz",
+    "parent_id": 1,
+    "source_url": "https://labomak.com.tr/index.php/category/hakkimizda/is-ortaklarimiz/",
+    "published_post_count": 1,
+    "description_html": "Bölgelere göre ürünlerimizi edineceğiniz şirketler"
+  },
+  {
+    "id": 821,
+    "name_tr": "Ambalaj Sektörü",
+    "slug": "ambalaj",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/ambalaj/",
+    "published_post_count": 20,
+    "description_html": ""
+  },
+  {
+    "id": 225,
+    "name_tr": "Eğilme Çeneleri ve Fikstürleri",
+    "slug": "egilme-ceneleri-ve-fiksturleri",
+    "parent_id": 214,
+    "source_url": "https://labomak.com.tr/index.php/category/mukavemet-test-cihazlari/egilme-ceneleri-ve-fiksturleri/",
+    "published_post_count": 0,
+    "description_html": "<img class=\"size-thumbnail wp-image-1204\" src=\"https://labomak.com.tr/wp-content/uploads/FAYANS-KIRMA-TEST-CİHAZI-1-150x150.png\" alt=\"Fayans seramik yer karosu üç nota basma kırma test Cihazı\" width=\"150\" height=\"150\" />"
+  },
+  {
+    "id": 314,
+    "name_tr": "Biyomedikal",
+    "slug": "biyomedikal",
+    "parent_id": 315,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/medikal/biyomedikal/",
+    "published_post_count": 8,
+    "description_html": ""
+  },
+  {
+    "id": 216,
+    "name_tr": "SEKTÖRLER",
+    "slug": "sektorlere-gore-test-cihazlari",
+    "parent_id": 0,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/",
+    "published_post_count": 4,
+    "description_html": ""
+  },
+  {
+    "id": 277,
+    "name_tr": "Eğilme",
+    "slug": "egilme",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/egilme/",
+    "published_post_count": 10,
+    "description_html": ""
+  },
+  {
+    "id": 230,
+    "name_tr": "El kumandaları",
+    "slug": "el-kumandalari",
+    "parent_id": 226,
+    "source_url": "https://labomak.com.tr/index.php/category/yardimci-donanimlar/el-kumandalari/",
+    "published_post_count": 1,
+    "description_html": ""
+  },
+  {
+    "id": 9,
+    "name_tr": "Haberler",
+    "slug": "labomaktan-haberler",
+    "parent_id": 1,
+    "source_url": "https://labomak.com.tr/index.php/category/hakkimizda/labomaktan-haberler/",
+    "published_post_count": 2,
+    "description_html": "Son zamanlarda üretilen cihazlar"
+  },
+  {
+    "id": 870,
+    "name_tr": "Ezilme",
+    "slug": "ezilme",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/ezilme/",
+    "published_post_count": 9,
+    "description_html": ""
+  },
+  {
+    "id": 320,
+    "name_tr": "Sıhhi Malzeme",
+    "slug": "sihhi-malzeme",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/sihhi-malzeme/",
+    "published_post_count": 13,
+    "description_html": ""
+  },
+  {
+    "id": 226,
+    "name_tr": "YARDIMCI DONANIMLAR",
+    "slug": "yardimci-donanimlar",
+    "parent_id": 0,
+    "source_url": "https://labomak.com.tr/index.php/category/yardimci-donanimlar/",
+    "published_post_count": 0,
+    "description_html": ""
+  },
+  {
+    "id": 316,
+    "name_tr": "Kataterler",
+    "slug": "kataterler",
+    "parent_id": 315,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/medikal/kataterler/",
+    "published_post_count": 6,
+    "description_html": ""
+  },
+  {
+    "id": 278,
+    "name_tr": "Bükülme, Burulma, Torsiyon aparatları",
+    "slug": "bukulme-burulma-torsiyon",
+    "parent_id": 214,
+    "source_url": "https://labomak.com.tr/index.php/category/mukavemet-test-cihazlari/bukulme-burulma-torsiyon/",
+    "published_post_count": 0,
+    "description_html": "Çekme testi esnasında numuneye rotasyonal hareket uygulayarak. Burulma Torsiyon) ya karşı dayanım ölçmeye yarayan fikstür ve aparatlar."
+  },
+  {
+    "id": 793,
+    "name_tr": "Ambalaj Test Fikstürleri",
+    "slug": "ambalaj-test-fiksturleri",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/ambalaj-test-fiksturleri/",
+    "published_post_count": 8,
+    "description_html": ""
+  },
+  {
+    "id": 282,
+    "name_tr": "Darbe Test Cihazları",
+    "slug": "darbe",
+    "parent_id": 7,
+    "source_url": "https://labomak.com.tr/index.php/category/imalatlarimiz/darbe/",
+    "published_post_count": 5,
+    "description_html": ""
+  },
+  {
+    "id": 281,
+    "name_tr": "Sürtünme",
+    "slug": "surtunme",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/surtunme/",
+    "published_post_count": 7,
+    "description_html": ""
+  },
+  {
+    "id": 321,
+    "name_tr": "HİZMETLERİMİZ",
+    "slug": "hizmetlerimiz",
+    "parent_id": 0,
+    "source_url": "https://labomak.com.tr/index.php/category/hizmetlerimiz/",
+    "published_post_count": 0,
+    "description_html": ""
+  },
+  {
+    "id": 317,
+    "name_tr": "Endoskoplar",
+    "slug": "endoskoplar",
+    "parent_id": 315,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/medikal/endoskoplar/",
+    "published_post_count": 7,
+    "description_html": ""
+  },
+  {
+    "id": 1,
+    "name_tr": "HAKKIMIZDA",
+    "slug": "hakkimizda",
+    "parent_id": 0,
+    "source_url": "https://labomak.com.tr/index.php/category/hakkimizda/",
+    "published_post_count": 4,
+    "description_html": "<img class=\" wp-image-339 alignleft\" src=\"https://labomak.com.tr/wp-content/uploads/HAKKIMIZDA-300x130.png\" alt=\"\" width=\"189\" height=\"82\" />"
+  },
+  {
+    "id": 286,
+    "name_tr": "Kesme",
+    "slug": "kesme",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/kesme/",
+    "published_post_count": 6,
+    "description_html": ""
+  },
+  {
+    "id": 306,
+    "name_tr": "Tekstil",
+    "slug": "tekstil",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/tekstil/",
+    "published_post_count": 11,
+    "description_html": ""
+  },
+  {
+    "id": 307,
+    "name_tr": "Gıda",
+    "slug": "gida",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/gida/",
+    "published_post_count": 17,
+    "description_html": ""
+  },
+  {
+    "id": 358,
+    "name_tr": "YILDIZLI ÜRÜNLER",
+    "slug": "yildizli-urunlerimiz",
+    "parent_id": 0,
+    "source_url": "https://labomak.com.tr/index.php/category/yildizli-urunlerimiz/",
+    "published_post_count": 18,
+    "description_html": "Müşterilerimizin en çok tercih ettiği ürünler."
+  },
+  {
+    "id": 874,
+    "name_tr": "Darbe",
+    "slug": "darbe-uygulamalara-gore-test-cihazlari",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/darbe-uygulamalara-gore-test-cihazlari/",
+    "published_post_count": 4,
+    "description_html": ""
+  },
+  {
+    "id": 308,
+    "name_tr": "Tarım",
+    "slug": "tarim",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/tarim/",
+    "published_post_count": 14,
+    "description_html": ""
+  },
+  {
+    "id": 875,
+    "name_tr": "Isıtma",
+    "slug": "isitma",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/isitma/",
+    "published_post_count": 1,
+    "description_html": ""
+  },
+  {
+    "id": 310,
+    "name_tr": "Enerji",
+    "slug": "enerji",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/enerji/",
+    "published_post_count": 17,
+    "description_html": ""
+  },
+  {
+    "id": 876,
+    "name_tr": "Erime",
+    "slug": "erime",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/erime/",
+    "published_post_count": 1,
+    "description_html": ""
+  },
+  {
+    "id": 877,
+    "name_tr": "Aşındırma",
+    "slug": "asindirma",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/asindirma/",
+    "published_post_count": 1,
+    "description_html": ""
+  },
+  {
+    "id": 313,
+    "name_tr": "Elektronik",
+    "slug": "elektronik",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/elektronik/",
+    "published_post_count": 18,
+    "description_html": ""
+  },
+  {
+    "id": 843,
+    "name_tr": "İnşaat",
+    "slug": "insaat",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/insaat/",
+    "published_post_count": 25,
+    "description_html": ""
+  },
+  {
+    "id": 869,
+    "name_tr": "ezilma",
+    "slug": "ezilma",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/ezilma/",
+    "published_post_count": 6,
+    "description_html": ""
+  },
+  {
+    "id": 868,
+    "name_tr": "Bağlantı elemanları",
+    "slug": "baglanti-elemanlari",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/baglanti-elemanlari/",
+    "published_post_count": 12,
+    "description_html": ""
+  },
+  {
+    "id": 285,
+    "name_tr": "Düzlemsel Çift Eksenli Test",
+    "slug": "duzlemsel-cift-eksenli-test",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/duzlemsel-cift-eksenli-test/",
+    "published_post_count": 4,
+    "description_html": ""
+  },
+  {
+    "id": 745,
+    "name_tr": "Orman Ürünleri _ Mobilya, Ahşap vb. Sektörlere yönelik test cihazları ve çözümler",
+    "slug": "orman-urunleri-_-mobilya-ahsap-vb-sektorlere-yonelik-test-cihazlari-ve-cozumler",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/orman-urunleri-_-mobilya-ahsap-vb-sektorlere-yonelik-test-cihazlari-ve-cozumler/",
+    "published_post_count": 16,
+    "description_html": ""
+  },
+  {
+    "id": 287,
+    "name_tr": "Patlatma",
+    "slug": "patlatma",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/patlatma/",
+    "published_post_count": 3,
+    "description_html": "[caption id=\"attachment_467\" align=\"alignnone\" width=\"150\"]<img class=\"size-thumbnail wp-image-467\" src=\"https://labomak.com.tr/wp-content/uploads/LABOMAK-KARTON-PATLATMA-CİHAZI-AÇIK-150x150.png\" alt=\"Labomak karton Kağıt patlatma test cihazı\" width=\"150\" height=\"150\" /> Karton Mukavva Kağıt ve benzeri numunelerin patlama dayanımını ölçmeye yarar[/caption]"
+  },
+  {
+    "id": 770,
+    "name_tr": "Ayakkabı",
+    "slug": "ayakkabi",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/ayakkabi/",
+    "published_post_count": 8,
+    "description_html": ""
+  },
+  {
+    "id": 288,
+    "name_tr": "Meyve hamur vb sertlikleri",
+    "slug": "meyve-hamur-vb-sertlikleri",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/meyve-hamur-vb-sertlikleri/",
+    "published_post_count": 5,
+    "description_html": ""
+  },
+  {
+    "id": 771,
+    "name_tr": "Seramik Fayans Yer karosu",
+    "slug": "seramik-fayans-yer-karosu",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/seramik-fayans-yer-karosu/",
+    "published_post_count": 14,
+    "description_html": ""
+  },
+  {
+    "id": 289,
+    "name_tr": "Gerilim - Gevşeme - Sürünme",
+    "slug": "gerilim-gevseme-surunme",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/gerilim-gevseme-surunme/",
+    "published_post_count": 5,
+    "description_html": ""
+  },
+  {
+    "id": 276,
+    "name_tr": "Sıkıştırma",
+    "slug": "sikistirma",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/sikistirma/",
+    "published_post_count": 13,
+    "description_html": ""
+  },
+  {
+    "id": 438,
+    "name_tr": "Otomotiv",
+    "slug": "otomotiv",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/otomotiv/",
+    "published_post_count": 25,
+    "description_html": ""
+  },
+  {
+    "id": 279,
+    "name_tr": "Akma",
+    "slug": "akma",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/akma/",
+    "published_post_count": 4,
+    "description_html": ""
+  },
+  {
+    "id": 311,
+    "name_tr": "Havacılık",
+    "slug": "havacilik",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/havacilik/",
+    "published_post_count": 21,
+    "description_html": ""
+  },
+  {
+    "id": 283,
+    "name_tr": "Grinti IFD",
+    "slug": "grinti-ifd",
+    "parent_id": 218,
+    "source_url": "https://labomak.com.tr/index.php/category/uygulamalara-gore-test-cihazlari/grinti-ifd/",
+    "published_post_count": 4,
+    "description_html": ""
+  },
+  {
+    "id": 305,
+    "name_tr": "Cam, Toprak, kil, Seramik",
+    "slug": "cam-toprak-kil-seramik",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/cam-toprak-kil-seramik/",
+    "published_post_count": 15,
+    "description_html": ""
+  },
+  {
+    "id": 315,
+    "name_tr": "Medikal",
+    "slug": "medikal",
+    "parent_id": 216,
+    "source_url": "https://labomak.com.tr/index.php/category/sektorlere-gore-test-cihazlari/medikal/",
+    "published_post_count": 16,
+    "description_html": ""
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "checked_on": "2026-09-08",
+  "sitemaps": {
+    "post": {
+      "sitemap_url": "https://labomak.com.tr/index.php/post-sitemap.xml",
+      "listed_urls": 90,
+      "not_fetched": [],
+      "fetch_errors": [],
+      "unclassified_regular_content": []
+    },
+    "page": {
+      "sitemap_url": "https://labomak.com.tr/index.php/page-sitemap.xml",
+      "listed_urls": 3,
+      "not_fetched": [],
+      "fetch_errors": [],
+      "unclassified_regular_content": []
+    },
+    "rl_gallery": {
+      "sitemap_url": "https://labomak.com.tr/index.php/rl_gallery-sitemap.xml",
+      "listed_urls": 22,
+      "not_fetched": [],
+      "fetch_errors": [],
+      "unclassified_regular_content": []
+    },
+    "helpie_faq": {
+      "sitemap_url": "https://labomak.com.tr/index.php/helpie_faq-sitemap.xml",
+      "listed_urls": 7,
+      "not_fetched": [],
+      "fetch_errors": [],
+      "unclassified_regular_content": []
+    }
+  },
+  "catalog_source_fetch_issues": [],
+  "validation": {
+    "unique_record_ids": true,
+    "unique_asset_ids": true,
+    "image_references_resolve": true,
+    "main_catalog_records": 89,
+    "gallery_candidates": 345,
+    "image_urls": 635
+  },
+  "limitations": [
+    "Image binaries and linked PDFs were not downloaded or individually validated.",
+    "Gallery entries are image/caption candidates, not deduplicated model records.",
+    "FAQ and gallery archive pages are crawl evidence; original regular content is reconciled separately."
+  ]
+}
