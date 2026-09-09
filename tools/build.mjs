@@ -8,6 +8,7 @@ import { catalogRoot, productUrl, productById } from '../data/portfolio.mjs';
 export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(root, 'dist');
 const domain = 'https://labomak.com.tr';
+const siteBasePath = (process.env.SITE_BASE_PATH || '').replace(/\/$/, '');
 const esc = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const home = lang => lang === 'tr' ? '/tr/' : '/';
 const url = (lang, family) => base[lang] + (family ? family.id + '/' : '');
@@ -17,6 +18,21 @@ const write = (route, content) => {
   fs.mkdirSync(path.dirname(target), { recursive: true });
   fs.writeFileSync(target, content);
 };
+function applySiteBasePath() {
+  if (!siteBasePath) return;
+  const pending = [out];
+  while (pending.length) {
+    const current = pending.pop();
+    for (const entry of fs.readdirSync(current, { withFileTypes: true })) {
+      const target = path.join(current, entry.name);
+      if (entry.isDirectory()) pending.push(target);
+      else if (entry.name.endsWith('.html')) {
+        const html = fs.readFileSync(target, 'utf8').replace(/(href|src)="\/(?!\/)/g, `$1="${siteBasePath}/`);
+        fs.writeFileSync(target, html);
+      }
+    }
+  }
+}
 const inputs = Object.fromEntries(['en', 'tr'].map(lang => [lang, fs.readFileSync(path.join(root, lang === 'en' ? 'index.html' : 'tr/index.html'), 'utf8')]));
 
 function localiseNavigation(html, lang) {
@@ -159,6 +175,7 @@ export function build() {
   const sitemap = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">' + pairs.flatMap(pair => ['en', 'tr'].map(lang => `<url><loc>${domain + pair[lang]}</loc>${['en', 'tr'].map(l => `<xhtml:link rel="alternate" hreflang="${l}" href="${domain + pair[l]}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${domain + pair.en}"/></url>`)).join('') + '</urlset>';
   fs.writeFileSync(path.join(out, 'sitemap.xml'), sitemap);
   fs.writeFileSync(path.join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${domain}/sitemap.xml\n`);
+  applySiteBasePath();
   console.log(`Built ${pairs.length*2} static pages in dist/ (English and Turkish).`);
 }
 

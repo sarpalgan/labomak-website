@@ -25,6 +25,8 @@ jobs:
           node-version: 20
 
       - name: Build website
+        env:
+          SITE_BASE_PATH: /labomak-website
         run: node tools/build.mjs
 
       - name: Upload Pages artifact
