@@ -3,7 +3,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { families, base, brochure } from '../data/catalogue.mjs';
 import { buildPortfolio, portfolioNavigation, portfolioPairs, familyModels } from './portfolio.mjs';
-import { catalogRoot, productUrl, productById } from '../data/portfolio.mjs';
+import { catalogRoot } from '../data/portfolio.mjs';
+import { homepage, homepageSeo } from './homepage.mjs';
 
 export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(root, 'dist');
@@ -52,6 +53,7 @@ function localiseNavigation(html, lang) {
 function header(lang, family, forHome = false) {
   let fragment = inputs[lang].match(/<header[\s\S]*?<main/)[0].replace(/<main$/, '');
   fragment = portfolioNavigation(fragment, lang);
+  fragment = fragment.replace(/<a class="brand"[\s\S]*?<\/a>/, `<a class="brand" href="${home(lang)}" aria-label="${t(lang,'Labomak home','Labomak ana sayfa')}"><img class="brand-wordmark-image" src="/assets/labomak-wordmark.png" alt="Labomak" width="986" height="108"></a>`);
   fragment = localiseNavigation(fragment, lang)
     .replace(/src="(?:\.\.\/)?logo.png"/g, 'src="/logo.png"')
     .replace(/href="(?:\.\.\/)?index.html" lang="en"/g, `href="${forHome ? home('en') : url('en', family)}" lang="en"`)
@@ -150,22 +152,23 @@ function document(lang, family, title, description, body) {
 
 export function build() {
   fs.mkdirSync(out, { recursive: true });
-  for (const file of ['styles.css', 'script.js', 'catalogue.css', 'catalogue.js', 'logo.png']) fs.copyFileSync(path.join(root, file), path.join(out, file));
+  for (const file of ['styles.css', 'script.js', 'catalogue.css', 'catalogue.js', 'logo.png', 'home.css', 'home.js', 'tensile-geometry.js']) fs.copyFileSync(path.join(root, file), path.join(out, file));
   fs.cpSync(path.join(root, 'assets'), path.join(out, 'assets'), { recursive: true });
   for (const lang of ['en', 'tr']) {
+    const seo = homepageSeo(lang);
     let html = inputs[lang].replace(/<header[\s\S]*?<main/, header(lang, null, true) + '<main');
     html = localiseNavigation(html, lang)
       .replace(/href="(?:\.\.\/)?styles.css"/g, 'href="/styles.css"><link rel="stylesheet" href="/catalogue.css"')
       .replace(/src="(?:\.\.\/)?script.js"/g, 'src="/script.js"')
       .replace('</body>', '<script src="/catalogue.js" defer></script></body>')
-      .replace(/<form class="quote-form[\s\S]*?<\/form>/, quote(lang).match(/<form[\s\S]*?<\/form>/)[0].replace('<form ', '<form class="quote-form" '))
-      .replace(/<footer[\s\S]*?<\/footer>/, footer(lang))
-      .replace(/<div class="logo-row[^>]*>[\s\S]*?<\/div>/, '<div class="logo-row"><span>Arçelik</span><span>ASELSAN</span><span>ROKETSAN</span></div>')
-      .replace(/50\+ configurations and custom solutions|50\+ konfigürasyon ve özel çözüm/g, t(lang, 'Standard platforms and custom systems', 'Standart platformlar ve özel sistemler'))
-      .replace(/<a class="text-link" href="#quote">View the complete product catalogue <span>↗<\/span><\/a>/, `<a class="text-link" href="${catalogRoot(lang)}">View the complete product catalogue <span>↗</span></a>`)
-      .replace(/<a class="text-link" href="#quote">Tüm ürün kataloğunu görüntüleyin <span>↗<\/span><\/a>/, `<a class="text-link" href="${catalogRoot(lang)}">Tüm ürün kataloğunu görüntüleyin <span>↗</span></a>`)
-      .replace(/href="#quote">(Discover Falcon|Falcon'ı keşfedin)/g, `href="${productUrl(lang,productById.get(274))}">$1`)
-      .replace(/(<article class="product-card featured[\s\S]*?)href="#quote"/, `$1href="${base[lang]}"`);
+      .replace(/<footer[\s\S]*?<\/footer>/, footer(lang));
+    html = html.replace(/<main[\s\S]*?<\/main>/, `<main id="main">${homepage(lang,quote)}</main>`)
+      .replace('<body>', '<body class="landing-page">')
+      .replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(seo.title)}</title>`)
+      .replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?\s*>/, `<meta name="description" content="${esc(seo.description)}">`)
+      .replace(/<meta property="og:title" content="[^"]*"\s*\/?\s*>/, `<meta property="og:title" content="${esc(seo.title)}">`)
+      .replace(/<meta property="og:description" content="[^"]*"\s*\/?\s*>/, `<meta property="og:description" content="${esc(seo.description)}">`)
+      .replace('</head>', seo.extra + '</head>');
     write(home(lang), html);
     write(base[lang], overview(lang));
     for (const family of families) write(url(lang, family), detail(lang, family));

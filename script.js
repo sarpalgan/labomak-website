@@ -50,6 +50,37 @@ navigationMenus.forEach((menu) => menu.addEventListener('toggle', () => {
   }
 }));
 
+// Use the same native disclosure for hover, keyboard and touch navigation.
+// A short exit delay keeps the panel open while the pointer moves into it.
+const hoverNavigation = window.matchMedia('(hover: hover) and (pointer: fine)');
+navigationMenus.forEach(menu => {
+  let closeTimer;
+  const cancelClose = () => window.clearTimeout(closeTimer);
+  menu.addEventListener('pointerenter', event => {
+    if (!hoverNavigation.matches || event.pointerType !== 'mouse') return;
+    cancelClose();
+    navigationMenus.forEach(other => { if (other !== menu) other.open = false; });
+    menu.open = true;
+  });
+  menu.addEventListener('pointerleave', event => {
+    if (!hoverNavigation.matches || event.pointerType !== 'mouse') return;
+    cancelClose();
+    closeTimer = window.setTimeout(() => {
+      if (!menu.contains(document.activeElement)) menu.open = false;
+    }, 180);
+  });
+  menu.addEventListener('focusin', cancelClose);
+  menu.addEventListener('focusout', event => {
+    if (!menu.contains(event.relatedTarget)) { cancelClose(); menu.open = false; }
+  });
+  menu.querySelector('summary')?.addEventListener('keydown', event => {
+    if (event.key !== 'ArrowDown') return;
+    event.preventDefault();
+    menu.open = true;
+    menu.querySelector('.mega-menu a')?.focus();
+  });
+});
+
 document.addEventListener('keydown', event => {
   if (event.key !== 'Escape') return;
   if (mobileMenu && !mobileMenu.hidden) {
