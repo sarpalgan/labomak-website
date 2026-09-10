@@ -63,6 +63,18 @@ test('canonical and reciprocal hreflang resolve across the full catalogue', () =
   assert.equal((sitemap.match(/<loc>/g) || []).length, pages.size);
 });
 
+test('every route uses the supplied wordmark and the shared six-item navigation', () => {
+  for (const [route,html] of pages) {
+    const header=html.match(/<header[\s\S]*?<\/header>/)[0];
+    assert.ok(header.includes('src="/assets/labomak-wordmark.png"'),route);
+    assert.ok(header.includes('width="986" height="108"'),route);
+    assert.ok(!header.includes('brand-wordmark">LABOMAK'),route);
+    assert.equal((header.match(/class="nav-mega"/g)||[]).length,6,route);
+    assert.ok(html.includes('src="/script.js"'),route);
+    assert.ok(html.includes('href="/catalogue.css"'),route);
+  }
+});
+
 test('product pages retain provenance, select the right enquiry and switch to the same product', () => {
   for (const p of products.filter(p=>!p.existingFamily)) for(const lang of ['en','tr']) {
     assert.equal(p.source.id, `wp-post-${p.id}`, 'Never confuse a WordPress category ID with a product post ID');
