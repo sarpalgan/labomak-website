@@ -10,12 +10,36 @@ import { products, productUrl, categoryUrl, categories, groupProducts, groups } 
 import { specifications, variantComparisons } from '../data/technical-content.mjs';
 import { documents, resourceUrl } from '../data/resources.mjs';
 import { fixtureGroups, fixtureItems, fixtureSnapshot, fixtureUrl } from '../data/fixtures.mjs';
+import { applicationDetails, applicationReviewDate } from '../data/application-details.mjs';
 import { applicationGuides, applicationGuideById } from '../data/application-guides.mjs';
 import { groupUrl, productById } from '../data/portfolio.mjs';
+import { companyServices, contentUrl, sectionRoot } from '../data/company-services.mjs';
 
 build();
 const routes = ['/', '/tr/', ...['en', 'tr'].flatMap(lang => [base[lang], ...families.map(f => base[lang] + f.id + '/')]), ...portfolioPairs.flatMap(p=>[p.en,p.tr])];
 const pages = new Map(routes.map(route => [route, fs.readFileSync(path.join(root, 'dist', route, 'index.html'), 'utf8')]));
+
+test('Company and Software menus expose dedicated bilingual pages on desktop and mobile', () => {
+  const descriptions = new Set();
+  for (const lang of ['en','tr']) {
+    const homepage = pages.get(lang === 'tr' ? '/tr/' : '/');
+    for (const p of companyServices) {
+      const route = contentUrl(lang,p);
+      const html = pages.get(route);
+      assert.ok(html, route);
+      assert.ok((homepage.match(new RegExp(`href="${route}"`, 'g')) || []).length >= 2, route);
+      assert.ok(html.includes(`href="${sectionRoot(lang,p.section)}"`), route);
+      assert.ok(html.includes(`<option selected>${p.title[lang].replace(/&/g,'&amp;')}</option>`), route);
+      const description = html.match(/name="description" content="([^"]+)"/)[1];
+      assert.ok(!descriptions.has(description), `Duplicate description: ${route}`);
+      descriptions.add(description);
+      const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
+      const pageSchema = schemas.find(s=>['WebPage','AboutPage','ContactPage'].includes(s['@type']));
+      assert.equal(pageSchema.url, 'https://labomak.com.tr'+route);
+      assert.equal(pageSchema.inLanguage, lang);
+    }
+  }
+});
 
 test('all catalogue pages have unique titles, one main and h1, no duplicate IDs', () => {
   assert.equal(pages.size, routes.length);
@@ -193,7 +217,23 @@ test('application guides cover all requested sources with crawlable bilingual an
     const structured=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
     const webpage=structured.find(s=>s['@type']==='WebPage');
     assert.equal(webpage.inLanguage,lang);
-    assert.deepEqual(webpage.mainEntity.itemListElement.map(i=>i.url),guide.productIds.map(id=>'https://labomak.com.tr'+productUrl(lang,productById.get(id))));
+    assert.equal(webpage.mainEntity['@type'],'Article');
+    assert.equal(webpage.mainEntity.headline,guide.name[lang]);
+    assert.equal(webpage.mainEntity.dateModified,applicationReviewDate);
+    const detail=applicationDetails[guide.id];
+    for(const id of ['method-variants','procedure','interpretation','reporting']) {
+      assert.ok(html.includes(`id="${id}"`),route);
+      assert.ok(html.includes(`href="#${id}"`),route);
+    }
+    for(const content of [...detail.methods,...detail.steps,detail.calculation]) {
+      assert.ok(html.includes(escape(content.body[lang])),route);
+      assert.notEqual(content.body.en,content.body.tr,route);
+    }
+    assert.ok(html.includes(escape(detail.report[lang])),route);
+    assert.ok(html.includes(escape(detail.pitfalls[lang])),route);
+    assert.ok(html.includes('aria-labelledby="detail-diagram-title detail-diagram-desc"'),route);
+    assert.deepEqual(webpage.citation,guide.references.map(r=>r.url));
+    assert.deepEqual(webpage.mentions.itemListElement.map(i=>i.url),guide.productIds.map(id=>'https://labomak.com.tr'+productUrl(lang,productById.get(id))));
     const breadcrumb=structured.find(s=>s['@type']==='BreadcrumbList');
     assert.equal(breadcrumb.itemListElement[1].item,'https://labomak.com.tr'+groupUrl(lang,'applications'));
     assert.ok(html.includes('property="og:image"'),route);

@@ -1,0 +1,14 @@
+import { applicationDetails, applicationReviewDate } from '../data/application-details.mjs';
+import { applicationDetailDiagram } from './application-detail-diagrams.mjs';
+const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export function applicationDetailSections(g,lang){
+ const d=applicationDetails[g.id];
+ if(!d)throw new Error('Missing detailed application content: '+g.id);
+ const t=(en,tr)=>lang==='tr'?tr:en;
+ const citation=`<p class="application-inline-source">${t('Technical basis','Teknik dayanak')}: ${g.references.map(r=>`<a href="${esc(r.url)}">${esc(r.name)}</a>`).join(' · ')}</p>`;
+ return {
+  methods:`<section class="section-shell application-section" id="method-variants"><p class="eyebrow">${t('CHOOSE THE PROCEDURE','PROSEDÜRÜ SEÇİN')}</p><h2>${t('Different arrangements, different answers.','Farklı düzenekler, farklı yanıtlar.')}</h2><div class="application-method-grid">${d.methods.map(m=>`<article><h3>${esc(m.title[lang])}</h3><p>${esc(m.body[lang])}</p></article>`).join('')}</div>${citation}</section>`,
+  procedure:`<section class="section-shell application-section" id="procedure"><p class="eyebrow">${t('FROM SPECIMEN TO RESULT','NUMUNEDEN SONUCA')}</p><h2>${t('How to plan and carry out the test.','Test nasıl planlanır ve uygulanır?')}</h2><p class="application-section-intro">${t('Use this workflow to plan the setup. Take specimen dimensions, rates, tolerances and acceptance criteria from the applicable procedure and its agreed edition.','Düzeneği planlamak için bu iş akışını kullanın. Numune boyutlarını, hızları, toleransları ve kabul kriterlerini ilgili prosedürün kararlaştırılan baskısından alın.')}</p><ol class="application-variables">${d.steps.map((s,i)=>`<li><span aria-hidden="true">${i+1}</span><div><h3>${esc(s.title[lang])}</h3><p>${esc(s.body[lang])}</p></div></li>`).join('')}</ol></section>`,
+  interpretation:`<section class="section-shell application-calculation" id="interpretation"><div><p class="eyebrow">${t('CALCULATION & INTERPRETATION','HESAP VE YORUM')}</p><h2>${esc(d.calculation.title[lang])}</h2><p class="application-formula">${esc(d.formula)}</p><p>${esc(d.calculation.body[lang])}</p><aside class="application-insight"><h3>${t('Common interpretation errors','Sık yapılan yorum hataları')}</h3><p>${esc(d.pitfalls[lang])}</p></aside></div>${applicationDetailDiagram(g.id,lang)}</section><section class="section-shell application-explanation" id="reporting"><div><p class="eyebrow">${t('MAKE THE RESULT TRACEABLE','SONUCU İZLENEBİLİR KILIN')}</p><h2>${t('What belongs in the test report?','Test raporunda neler bulunmalı?')}</h2></div><div class="application-prose"><p>${esc(d.report[lang])}</p><p class="application-review-date">${t('Guide updated','Rehber güncelleme tarihi')}: <time datetime="${applicationReviewDate}">${lang==='tr'?'13 Eylül 2026':'13 September 2026'}</time> · Labomak</p></div></section>`
+ };
+}

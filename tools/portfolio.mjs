@@ -1,3 +1,5 @@
+import { companyServicePairs, sectionRoot } from '../data/company-services.mjs';
+import { buildCompanyServices, businessMenuItems } from './company-service-pages.mjs';
 import fs from 'node:fs';
 import { applicationGuideById } from '../data/application-guides.mjs';
 import { applicationBody, applicationHub, applicationImage } from './application-pages.mjs';
@@ -40,15 +42,18 @@ export function portfolioNavigation(html,lang){
     [t(lang,'Browse documents','Dokümanları keşfedin'),documentKinds.map(k=>a(resourceUrl(lang)+'?kind='+k[0]+'#documents',k[lang==='tr'?2:1]))],
     [t(lang,'Equipment selection','Ekipman seçimi'),[a(categoryUrl(lang,'universal'),t(lang,'Compare testing systems','Test sistemlerini karşılaştırın')),a(categoryUrl(lang,'fixtures'),t(lang,'Find grips and fixtures','Çene ve fikstür bulun')),a(resourceUrl(lang),t(lang,'All documents →','Tüm dokümanlar →'))]]
   ]));
-  updated=updated.replace(/<a\b[^>]*>([^<]*(?:Falcon|Falcon')[^<]*)<\/a>/gi,(whole,label)=>{
-    const fragment=/Eko/i.test(label)?'#eko':/Pro/i.test(label)?'#pro':'';
-    return a(productUrl(lang,productById.get(274))+fragment,label);
-  });
-  updated=updated.replace(/href="#falcon"/g,`href="${productUrl(lang,productById.get(274))}"`);
+  for (const [index,section] of [[3,'services'],[5,'company']]) {
+    const items=businessMenuItems(lang,section);
+    updated=updated.replace(old[index],menu(t(lang,section==='company'?'Company':'Software & Services',section==='company'?'Kurumsal':'Yazılım ve Hizmetler'),section==='company'?'06 / LABOMAK':'04 / LABOMAK',t(lang,section==='company'?'Meet the team behind your test systems.':'More value from every test system.',section==='company'?'Test sistemlerinizin arkasındaki ekibi tanıyın.':'Her test sisteminden daha fazla değer.'),sectionRoot(lang,section),[
+      [t(lang,section==='company'?'Labomak':'Software',section==='company'?'Labomak':'Yazılım'),items.slice(0,4)],
+      [t(lang,section==='company'?'Work with us':'Service',section==='company'?'Birlikte çalışalım':'Hizmet'),items.slice(4)]
+    ]));
+  }
   return html.replace(nav,updated);
 }
 
 export const portfolioPairs=[
+  ...companyServicePairs,
   ...sectionPairs,
   {en:catalogRoot('en'),tr:catalogRoot('tr')},
   ...categories.filter(c=>c.id!=='universal').map(c=>({en:categoryUrl('en',c.id),tr:categoryUrl('tr',c.id)})),
@@ -102,11 +107,12 @@ export function buildPortfolio({header,footer,quote,write}){
     const route=pair[lang];
     let sharedHeader=header(lang,null).replace(/(<a[^>]*href=")[^"]+(" lang="(en|tr)")/g,(_,a,b,l)=>a+pair[l]+b);
     const schema={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{name:'Labomak',url:lang==='tr'?'/tr/':'/'},...(includeCatalogueRoot?[{name:t(lang,'Products','Ürünler'),url:catalogRoot(lang)}]:[]),...crumbs].map((c,i)=>({'@type':'ListItem',position:i+1,name:c.name,item:domain+c.url}))};
-    write(route,`<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(title)} | Labomak</title><meta name="description" content="${esc(intro)}"><meta name="theme-color" content="#0d141b"><link rel="canonical" href="${domain+route}">${['en','tr'].map(l=>`<link rel="alternate" hreflang="${l}" href="${domain+pair[l]}">`).join('')}<link rel="alternate" hreflang="x-default" href="${domain+pair.en}"><meta property="og:title" content="${esc(title)} | Labomak"><meta property="og:description" content="${esc(intro)}"><meta property="og:type" content="website">${seo.image?`<meta property="og:image" content="${domain+seo.image}"><meta property="og:image:alt" content="${esc(seo.imageAlt||title)}">`:""}<meta property="og:url" content="${domain+route}"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/catalogue.css"><script type="application/ld+json">${JSON.stringify(schema).replace(/</g,'\\u003c')}</script></head><body class="catalogue-page portfolio-page"><a class="skip-link" href="#main">${t(lang,'Skip to content','İçeriğe geç')}</a>${sharedHeader}<main id="main"><nav class="breadcrumbs section-shell" id="top" aria-label="${t(lang,'Breadcrumb','Sayfa yolu')}">${a(lang==='tr'?'/tr/':'/','Labomak')}<span>/</span>${!includeCatalogueRoot?crumbs.map((c,i)=>`${i?"<span>/</span>":""}${i===crumbs.length-1?`<span aria-current="page">${esc(c.name)}</span>`:a(c.url,c.name)}`).join(''):route===catalogRoot(lang)?`<span aria-current="page">${t(lang,'Products','Ürünler')}</span>`:a(catalogRoot(lang),t(lang,'Products','Ürünler'))+crumbs.map((c,i)=>`<span>/</span>${i===crumbs.length-1?`<span aria-current="page">${esc(c.name)}</span>`:a(c.url,c.name)}`).join('')}</nav>${body}</main>${footer(lang)}<script src="/script.js" defer></script><script src="/catalogue.js" defer></script></body></html>`);
+    write(route,`<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(title)} | Labomak</title><meta name="description" content="${esc(intro)}"><meta name="theme-color" content="#0d141b"><link rel="canonical" href="${domain+route}">${['en','tr'].map(l=>`<link rel="alternate" hreflang="${l}" href="${domain+pair[l]}">`).join('')}<link rel="alternate" hreflang="x-default" href="${domain+pair.en}"><meta property="og:title" content="${esc(title)} | Labomak"><meta property="og:description" content="${esc(intro)}"><meta property="og:type" content="website">${seo.image?`<meta property="og:image" content="${domain+seo.image}"><meta property="og:image:alt" content="${esc(seo.imageAlt||title)}">`:""}<meta property="og:url" content="${domain+route}"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/catalogue.css"><script type="application/ld+json">${JSON.stringify(schema).replace(/</g,'\\u003c')}</script>${seo.schema?`<script type="application/ld+json">${JSON.stringify(seo.schema).replace(/</g,'\\u003c')}</script>`:''}</head><body class="catalogue-page portfolio-page"><a class="skip-link" href="#main">${t(lang,'Skip to content','İçeriğe geç')}</a>${sharedHeader}<main id="main"><nav class="breadcrumbs section-shell" id="top" aria-label="${t(lang,'Breadcrumb','Sayfa yolu')}">${a(lang==='tr'?'/tr/':'/','Labomak')}<span>/</span>${!includeCatalogueRoot?crumbs.map((c,i)=>`${i?"<span>/</span>":""}${i===crumbs.length-1?`<span aria-current="page">${esc(c.name)}</span>`:a(c.url,c.name)}`).join(''):route===catalogRoot(lang)?`<span aria-current="page">${t(lang,'Products','Ürünler')}</span>`:a(catalogRoot(lang),t(lang,'Products','Ürünler'))+crumbs.map((c,i)=>`<span>/</span>${i===crumbs.length-1?`<span aria-current="page">${esc(c.name)}</span>`:a(c.url,c.name)}`).join('')}</nav>${body}</main>${footer(lang)}<script src="/script.js" defer></script><script src="/catalogue.js" defer></script></body></html>`);
   }
   const pairFor=fn=>({en:fn('en'),tr:fn('tr')});
   for(const lang of ['en','tr']){
     buildSectionPages({lang,page,quote});
+    buildCompanyServices({lang,page,quote});
     const title=t(lang,'Equipment for every test.','Her test için ekipman.');
     const intro=t(lang,'Explore Labomak testing machines, grips and control systems. Search by product or find the right equipment group for your laboratory.','Labomak test cihazlarını, çenelerini ve kontrol sistemlerini keşfedin. Ürüne göre arayın veya laboratuvarınız için uygun ekipman grubunu bulun.');
     page(lang,pairFor(catalogRoot),title,intro,hero(title,intro,lang,productById.get(5191))+categoryTiles(lang)+listing(products,lang)+quote(lang));
